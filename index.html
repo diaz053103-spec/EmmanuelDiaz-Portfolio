@@ -1,8 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Emmanuel Diaz | Portfolio</title>
+    <title>Emmanuel Diaz | Cloud & IT Infrastructure Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -17,25 +18,37 @@
         header {
             background-color: #0a2540;
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1em;
         }
 
         section {
             max-width: 900px;
-            margin: auto;
+            margin: 20px auto;
             padding: 40px 20px;
             background-color: white;
-            margin-bottom: 20px;
             border-radius: 6px;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             margin-bottom: 10px;
         }
 
         h2 {
             color: #0a2540;
+        }
+
+        h3 {
+            color: #333;
         }
 
         ul {
@@ -48,10 +61,33 @@
             gap: 15px;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
+        .project {
+            border-left: 4px solid #0a2540;
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .certifications li {
+            margin-bottom: 12px;
+        }
+
+        section ul {
+            margin-top: 15px;
+        }
+
+        section ul ul {
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        section li {
+            margin-bottom: 10px;
         }
 
         a {
@@ -63,18 +99,15 @@
             text-decoration: underline;
         }
 
-	section ul {
-        margin-top: 15px;
-  	}
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
 
-    	section ul ul {
-        margin-top: 8px;
-        margin-bottom: 12px;
-    	}
-
-   	 section li {
-        margin-bottom: 10px;
-   	}
+        .highlight {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -82,105 +115,202 @@
 
 <header>
     <h1>Emmanuel Diaz</h1>
-    <p>Aspiring Cloud / IT Infrastructure Professional</p>
+    <p>Cloud & IT Infrastructure | AWS | Linux | Terraform</p>
 </header>
 
 <section>
     <h2>About Me</h2>
     <p>
-        I am an Associate-level IT professional with an Associate’s degree in Computer Science,
-        AWS Cloud Practitioner certification, and hands-on experience studying networking,
-        security, governance & compliance, and cloud infrastructure. I am pursuing a career in 		cloud or hybrid environments where validation, security, and system reliability are 		critical.
+        I am a Computer Science graduate building hands-on experience in cloud infrastructure,
+        Linux, automation, and IT systems. I hold the AWS Certified Cloud Practitioner and
+        AWS Certified Solutions Architect – Associate certifications and have built
+        infrastructure using AWS, Terraform, Linux, GitHub Actions, and AWS Systems Manager.
+    </p>
+
+    <p>
+        I am pursuing entry-level opportunities in cloud, IT infrastructure, cloud support,
+        and DevOps where I can continue developing practical skills while contributing to
+        reliable and secure systems.
     </p>
 </section>
 
 <section>
+    <h2>Featured Project</h2>
+
+    <div class="project">
+        <h3>AWS Cloud Infrastructure — V1 → V2</h3>
+
+        <p>
+            A Terraform-managed AWS infrastructure project that evolved from a single EC2
+            web server into a highly available, load-balanced architecture using multiple
+            Availability Zones and an Auto Scaling Group.
+        </p>
+
+        <ul>
+            <li>
+                Built AWS networking with a custom VPC, public subnets, Internet Gateway,
+                and route tables.
+            </li>
+            <li>
+                Deployed Amazon Linux 2023 and NGINX using Terraform and EC2 Launch Templates.
+            </li>
+            <li>
+                Implemented an Application Load Balancer and target group with health checks.
+            </li>
+            <li>
+                Configured an Auto Scaling Group with a minimum of 2 instances and maximum of 3.
+            </li>
+            <li>
+                Used AWS Systems Manager instead of exposing SSH access to V2 application servers.
+            </li>
+            <li>
+                Implemented GitHub Actions CI/CD using GitHub OIDC and AWS Systems Manager.
+            </li>
+            <li>
+                Added CloudWatch alarms for ALB target health and Auto Scaling capacity.
+            </li>
+            <li>
+                Applied security improvements including dedicated security groups and required
+                IMDSv2 for EC2 instances.
+            </li>
+        </ul>
+
+        <p>
+            <span class="highlight">Technologies:</span>
+            AWS, Terraform, Linux, Amazon Linux 2023, NGINX, EC2, Application Load Balancer,
+            Auto Scaling, IAM, Systems Manager, CloudWatch, GitHub Actions, GitHub OIDC, Bash
+        </p>
+
+        <a class="project-link"
+           href="https://github.com/diaz053103-spec/AWS-cloud-infrastructure"
+           target="_blank"
+           rel="noopener noreferrer">
+            View Project on GitHub →
+        </a>
+    </div>
+</section>
+
+<section>
     <h2>Technical Skills</h2>
+
     <div class="skills-grid">
         <ul>
+            <li>AWS Cloud Infrastructure</li>
+            <li>Terraform / Infrastructure as Code</li>
             <li>Linux Fundamentals</li>
             <li>Networking Fundamentals</li>
-            <li>Physical and Electrical Infrastructure Concepts</li>
         </ul>
+
         <ul>
-            <li>AWS and Azure Cloud Fundamentals</li>
-            <li>PowerShell, Infrastructure as Code, and IAM Fundamentals</li>
-            <li>System, Software, and Hardware Security Concepts</li>
+            <li>EC2, VPC, ALB & Auto Scaling</li>
+            <li>IAM & AWS Systems Manager</li>
+            <li>CloudWatch Monitoring</li>
+            <li>Git & GitHub</li>
         </ul>
+
         <ul>
-            <li>HTML, CSS, JavaScript, C++, Python, Assembly x86</li>
-            <li>Bash, CLI, & Scripting Basics</li>
-            <li>Container Fundamentals </li>
+            <li>GitHub Actions / CI/CD</li>
+            <li>Bash & CLI Scripting</li>
+            <li>Python</li>
+            <li>C++</li>
+        </ul>
+
+        <ul>
+            <li>HTML & CSS</li>
+            <li>Azure Fundamentals</li>
+            <li>PowerShell Fundamentals</li>
+            <li>Container Fundamentals</li>
         </ul>
     </div>
 </section>
 
 <section>
-    <h2>Projects & Labs</h2>
-    <h3>Cloud Fundamentals Projects</h3>
-<p>
-    Hands-on cloud labs preformed in the Pluralsight's acloudguru sandbox environment focused on identity, networking, compute, security,
-    and infrastructure automation across AWS and Azure environments.
-</p>
+    <h2>Cloud Fundamentals Projects & Labs</h2>
 
-<ul>
-    <li><strong>Identity & Access Management</strong>
-        <ul>
-            <li>Create users and manage permissions using IAM groups and policies </li>
-            <li>Create and manage Microsoft Entra ID users via portal </li>
-            <li>Use Service Principal identity to list Azure AD roles</li>
-        </ul>
-    </li>
+    <p>
+        Hands-on cloud labs completed through A Cloud Guru / Pluralsight sandbox environments,
+        covering AWS and Azure identity, networking, compute, security, containers,
+        and infrastructure automation.
+    </p>
 
-    <li><strong>Compute & Virtual Machines</strong>
-        <ul>
-            <li>Launch EC2 instances within a Virtual Private Cloud </li>
-            <li>Access Windows VMs securely using Azure Bastion </li>
-            <li>Use custom images for Virtual Machine Scale Sets </li>
-            <li>Resize Azure virtual machines using PowerShell</li>
-            <li>Snapshot Azure VM disks using PowerShell</li>
-        </ul>
-    </li>
+    <ul>
+        <li><strong>Identity & Access Management</strong>
+            <ul>
+                <li>Created AWS IAM users, groups, and permissions.</li>
+                <li>Created and managed Microsoft Entra ID users through the Azure portal.</li>
+                <li>Used service principal identities to work with Azure roles.</li>
+            </ul>
+        </li>
 
-    <li><strong>Networking & Security</strong>
-        <ul>
-            <li>Create hub-and-spoke network topology </li>
-            <li>Create and manage multiple subnets </li>
-            <li>Configure Application Security Groups for web servers </li>
-            <li>Limit access to Azure Storage using SAS URIs</li>
-        </ul>
-    </li>
+        <li><strong>Compute & Virtual Machines</strong>
+            <ul>
+                <li>Launched EC2 instances within an AWS VPC.</li>
+                <li>Accessed Windows virtual machines using Azure Bastion.</li>
+                <li>Worked with custom images and Virtual Machine Scale Sets.</li>
+                <li>Resized Azure virtual machines using PowerShell.</li>
+                <li>Created Azure VM disk snapshots using PowerShell.</li>
+            </ul>
+        </li>
 
-    <li><strong>Containers & Deployment</strong>
-        <ul>
-            <li>Create a web application from a Docker container </li>
-            <li>Build and run containers using Azure Container Registry </li>
-            <li>Install and configure NGINX on Linux VMs using Cloud-Init</li>
-        </ul>
-    </li>
+        <li><strong>Networking & Security</strong>
+            <ul>
+                <li>Created hub-and-spoke network topologies.</li>
+                <li>Created and managed multiple subnets.</li>
+                <li>Configured Application Security Groups for web servers.</li>
+                <li>Controlled Azure Storage access using SAS URIs.</li>
+            </ul>
+        </li>
 
-    <li><strong>Infrastructure as Code</strong>
-        <ul>
-            <li>Create DynamoDB tables using AWS CloudFormation</li>
-        </ul>
-    </li>
-</ul>
+        <li><strong>Containers & Deployment</strong>
+            <ul>
+                <li>Created web applications from Docker containers.</li>
+                <li>Built and ran containers using Azure Container Registry.</li>
+                <li>Installed and configured NGINX on Linux VMs using Cloud-Init.</li>
+            </ul>
+        </li>
+
+        <li><strong>Infrastructure as Code</strong>
+            <ul>
+                <li>Created DynamoDB tables using AWS CloudFormation.</li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section>
     <h2>Certifications & Education</h2>
-    <ul>
-        <li>AWS Certified Cloud Practitioner</li>
-        <li>Associates Degree in Computer Science</li>
-        <li>AWS Solution Architect Associate (In Progress)</li>
+
+    <ul class="certifications">
+        <li>
+            <strong>AWS Certified Solutions Architect – Associate</strong>
+        </li>
+
+        <li>
+            <strong>AWS Certified Cloud Practitioner</strong>
+        </li>
+
+        <li>
+            <strong>Associate Degree in Computer Science</strong>
+        </li>
     </ul>
 </section>
 
 <section>
     <h2>Contact</h2>
+
     <p>
-        Email: <a href="mailto:diaz053103@yahoo.com">diaz053103@yahoo.com</a><br>
-        GitHub: <a href="https://github.com/diaz053103-spec" target="_blank" rel="noopener 		noreferrer">diaz053103-spec</a>
+        Email:
+        <a href="mailto:diaz053103@yahoo.com">
+            diaz053103@yahoo.com
+        </a>
+        <br>
+
+        GitHub:
+        <a href="https://github.com/diaz053103-spec"
+           target="_blank"
+           rel="noopener noreferrer">
+            github.com/diaz053103-spec
+        </a>
     </p>
 </section>
 
@@ -190,3 +320,4 @@
 
 </body>
 </html>
+```
