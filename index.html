@@ -3,110 +3,240 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Emmanuel Diaz | Cloud & IT Infrastructure Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emmanuel Diaz's cloud infrastructure, IT operations, DevOps, and software projects portfolio.">
+    <title>Emmanuel Diaz | Cloud, Infrastructure & DevOps Portfolio</title>
 
     <style>
+        :root {
+            --navy: #0a2540;
+            --blue: #1769aa;
+            --bg: #f4f6f8;
+            --text: #303b46;
+            --muted: #657386;
+            --border: #dfe6ee;
+            --white: #fff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
         }
 
         header {
-            background-color: #0a2540;
+            background: linear-gradient(135deg, #0a2540, #174b75);
             color: white;
-            padding: 50px 20px;
+            padding: 76px 20px 66px;
             text-align: center;
         }
 
         header h1 {
-            margin-bottom: 8px;
+            margin: 0 0 10px;
+            font-size: clamp(2.2rem, 5vw, 3.3rem);
+            letter-spacing: -1px;
         }
 
         header p {
-            margin: 0;
-            font-size: 1.1em;
+            margin: 0 auto;
+            max-width: 760px;
+            font-size: 1.12rem;
+            color: #e1edf8;
+        }
+
+        .hero-note {
+            margin-top: 16px;
+            font-size: .95rem;
+            color: #c5d9ec;
+        }
+
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 13px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--navy);
+            font-weight: bold;
+            font-size: .94rem;
         }
 
         section {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 40px 20px;
-            background-color: white;
-            border-radius: 6px;
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 10px;
+            max-width: 1040px;
+            margin: 26px auto;
+            padding: 38px;
+            background: var(--white);
+            border: 1px solid #edf0f4;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(10, 37, 64, .035);
+            scroll-margin-top: 24px;
         }
 
         h2 {
-            color: #0a2540;
+            color: var(--navy);
+            margin: 0 0 18px;
+            font-size: 1.65rem;
+            letter-spacing: -.3px;
         }
 
         h3 {
-            color: #333;
+            color: var(--navy);
+            margin: 0 0 10px;
         }
 
-        ul {
-            padding-left: 20px;
+        p { margin-top: 0; }
+
+        ul { padding-left: 22px; }
+
+        li { margin-bottom: 8px; }
+
+        a {
+            color: var(--blue);
+            text-decoration: none;
         }
 
-        .skills-grid {
+        a:hover { text-decoration: underline; }
+
+        .intro { max-width: 850px; }
+
+        .section-intro {
+            color: var(--muted);
+            margin-top: -8px;
+            margin-bottom: 25px;
+        }
+
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
         }
 
         .project {
-            border-left: 4px solid #0a2540;
-            padding-left: 20px;
-            margin-top: 20px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .project.featured {
+            border-top: 4px solid var(--blue);
+        }
+
+        .project.aws {
+            border-top: 4px solid var(--navy);
+        }
+
+        .project-label {
+            display: inline-block;
+            align-self: flex-start;
+            background: #edf5fc;
+            color: var(--navy);
+            padding: 4px 9px;
+            border-radius: 5px;
+            font-size: .78rem;
+            font-weight: bold;
+            margin-bottom: 13px;
+        }
+
+        .project p { margin-bottom: 12px; }
+
+        .project ul { padding-left: 20px; }
+
+        .tech-list {
+            color: #42546a;
+            font-size: .92rem;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 14px;
         }
 
         .project-link {
             display: inline-block;
-            margin-top: 10px;
+            padding: 9px 13px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
             font-weight: bold;
+            font-size: .9rem;
         }
 
-        .certifications li {
-            margin-bottom: 12px;
+        .project-link.primary {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
         }
 
-        section ul {
-            margin-top: 15px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
         }
 
-        section ul ul {
-            margin-top: 8px;
-            margin-bottom: 12px;
+        .skill-group {
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 18px;
         }
 
-        section li {
-            margin-bottom: 10px;
+        .skill-group h3 { font-size: 1rem; }
+
+        .skill-group ul {
+            margin-bottom: 0;
+            padding-left: 19px;
         }
 
-        a {
-            color: #0a2540;
-            text-decoration: none;
-        }
+        .skill-group li { margin-bottom: 5px; }
 
-        a:hover {
-            text-decoration: underline;
+        .experience-list > li { margin-bottom: 14px; }
+
+        .certifications li { margin-bottom: 12px; }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            color: #777;
+            padding: 25px 20px;
+            color: #778394;
+            font-size: .9rem;
         }
 
-        .highlight {
-            font-weight: bold;
+        .highlight { font-weight: bold; }
+
+        @media (max-width: 760px) {
+            header { padding: 54px 20px; }
+
+            section {
+                margin: 16px 12px;
+                padding: 25px 20px;
+            }
+
+            .project-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav { gap: 12px 20px; }
         }
     </style>
 </head>
@@ -115,126 +245,265 @@
 
 <header>
     <h1>Emmanuel Diaz</h1>
-    <p>Cloud & IT Infrastructure | AWS | Linux | Terraform</p>
+    <p>Cloud Infrastructure | IT Operations | DevOps</p>
+    <div class="hero-note">
+        AWS · Terraform · Linux · Docker · Python · CI/CD
+    </div>
 </header>
 
-<section>
+<nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Technical Skills</a>
+    <a href="#labs">Cloud Labs</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
     <h2>About Me</h2>
-    <p>
-        I am a Computer Science graduate building hands-on experience in cloud infrastructure,
-        Linux, automation, and IT systems. I hold the AWS Certified Cloud Practitioner and
-        AWS Certified Solutions Architect – Associate certifications and have built
-        infrastructure using AWS, Terraform, Linux, GitHub Actions, and AWS Systems Manager.
-    </p>
-
-    <p>
-        I am pursuing entry-level opportunities in cloud, IT infrastructure, cloud support,
-        and DevOps where I can continue developing practical skills while contributing to
-        reliable and secure systems.
-    </p>
-</section>
-
-<section>
-    <h2>Featured Project</h2>
-
-    <div class="project">
-        <h3>AWS Cloud Infrastructure — V1 → V2</h3>
-
+    <div class="intro">
         <p>
-            A Terraform-managed AWS infrastructure project that evolved from a single EC2
-            web server into a highly available, load-balanced architecture using multiple
-            Availability Zones and an Auto Scaling Group.
+            I am a Computer Science graduate building hands-on experience in cloud
+            infrastructure, Linux, automation, application deployment, and IT systems.
+            I hold the AWS Certified Cloud Practitioner and AWS Certified Solutions
+            Architect – Associate certifications and have built infrastructure using
+            AWS, Terraform, Linux, GitHub Actions, and AWS Systems Manager.
         </p>
-
-        <ul>
-            <li>
-                Built AWS networking with a custom VPC, public subnets, Internet Gateway,
-                and route tables.
-            </li>
-            <li>
-                Deployed Amazon Linux 2023 and NGINX using Terraform and EC2 Launch Templates.
-            </li>
-            <li>
-                Implemented an Application Load Balancer and target group with health checks.
-            </li>
-            <li>
-                Configured an Auto Scaling Group with a minimum of 2 instances and maximum of 3.
-            </li>
-            <li>
-                Used AWS Systems Manager instead of exposing SSH access to V2 application servers.
-            </li>
-            <li>
-                Implemented GitHub Actions CI/CD using GitHub OIDC and AWS Systems Manager.
-            </li>
-            <li>
-                Added CloudWatch alarms for ALB target health and Auto Scaling capacity.
-            </li>
-            <li>
-                Applied security improvements including dedicated security groups and required
-                IMDSv2 for EC2 instances.
-            </li>
-        </ul>
-
         <p>
-            <span class="highlight">Technologies:</span>
-            AWS, Terraform, Linux, Amazon Linux 2023, NGINX, EC2, Application Load Balancer,
-            Auto Scaling, IAM, Systems Manager, CloudWatch, GitHub Actions, GitHub OIDC, Bash
+            My projects combine infrastructure automation with practical operations:
+            deploying applications, configuring services, investigating failures,
+            improving health checks, and documenting technical changes.
         </p>
-
-        <a class="project-link"
-           href="https://github.com/diaz053103-spec/AWS-cloud-infrastructure"
-           target="_blank"
-           rel="noopener noreferrer">
-            View Project on GitHub →
-        </a>
+        <p>
+            I am pursuing entry-level opportunities in cloud engineering, IT
+            infrastructure, cloud support, and DevOps where I can contribute to
+            reliable systems while continuing to develop my engineering skills.
+        </p>
     </div>
 </section>
 
-<section>
+<section id="projects">
+    <h2>Featured Projects</h2>
+    <p class="section-intro">
+        Hands-on projects demonstrating cloud architecture, infrastructure as code,
+        application deployment, and operational troubleshooting.
+    </p>
+
+    <div class="project-grid">
+
+        <article class="project featured">
+            <span class="project-label">Application & Operations</span>
+            <h3>LSFL Production Simulation</h3>
+
+            <p>
+                A containerized production-operations simulation featuring a web
+                dashboard and a separate API service. Deployed to Render, the project
+                provides an environment for exploring service health, operational
+                visibility, API responses, and troubleshooting deployment issues.
+            </p>
+
+            <h4>Key Implementation Work</h4>
+            <ul>
+                <li>
+                    Built and maintained a customer-facing operations dashboard
+                    connected to a separate backend API.
+                </li>
+                <li>
+                    Containerized the application services with Docker and configured
+                    deployment settings through <code>render.yaml</code>.
+                </li>
+                <li>
+                    Implemented and investigated API endpoints for service health,
+                    ticket data, and documentation data.
+                </li>
+                <li>
+                    Troubleshot differences between container health checks, API
+                    responses, and application-level health status.
+                </li>
+                <li>
+                    Used Python, shell commands, Git diffs, and syntax checks to
+                    diagnose and apply targeted backend changes.
+                </li>
+                <li>
+                    Committed and pushed changes through Git and GitHub for deployment.
+                </li>
+            </ul>
+
+            <p class="tech-list">
+                <span class="highlight">Technologies:</span>
+                Python, Docker, HTML, CSS, REST-style API endpoints, Git, GitHub,
+                Render, YAML, Linux/Unix CLI
+            </p>
+
+            <div class="project-links">
+                <a class="project-link primary"
+                   href="https://github.com/diaz053103-spec/lsfl-production-simulation"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Source Code →
+                </a>
+                <a class="project-link"
+                   href="https://lsfl-dashboard.onrender.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Live Dashboard →
+                </a>
+                <a class="project-link"
+                   href="https://lsfl-api.onrender.com/api/tickets"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    API Example →
+                </a>
+            </div>
+        </article>
+
+        <article class="project aws">
+            <span class="project-label">Cloud Infrastructure & IaC</span>
+            <h3>AWS Cloud Infrastructure — V1 → V2</h3>
+
+            <p>
+                A Terraform-managed AWS infrastructure project that evolved from a
+                single EC2 web server into a highly available, load-balanced
+                architecture using multiple Availability Zones and an Auto Scaling Group.
+            </p>
+
+            <h4>Key Implementation Work</h4>
+            <ul>
+                <li>
+                    Built a custom VPC, public subnets, Internet Gateway, and route tables.
+                </li>
+                <li>
+                    Deployed Amazon Linux 2023 and NGINX using Terraform and EC2
+                    Launch Templates.
+                </li>
+                <li>
+                    Configured an Application Load Balancer, target group, and health checks.
+                </li>
+                <li>
+                    Implemented an Auto Scaling Group with a minimum of two instances
+                    and a maximum of three.
+                </li>
+                <li>
+                    Used AWS Systems Manager instead of exposing SSH access to V2
+                    application servers.
+                </li>
+                <li>
+                    Implemented GitHub Actions CI/CD using GitHub OIDC and Systems Manager.
+                </li>
+                <li>
+                    Added CloudWatch alarms for target health and Auto Scaling capacity.
+                </li>
+                <li>
+                    Applied security improvements, including dedicated security groups
+                    and required IMDSv2 for EC2 instances.
+                </li>
+            </ul>
+
+            <p class="tech-list">
+                <span class="highlight">Technologies:</span>
+                AWS, Terraform, Linux, Amazon Linux 2023, NGINX, EC2, VPC, ALB,
+                Auto Scaling, IAM, Systems Manager, CloudWatch, GitHub Actions,
+                GitHub OIDC, Bash
+            </p>
+
+            <div class="project-links">
+                <a class="project-link primary"
+                   href="https://github.com/diaz053103-spec/AWS-cloud-infrastructure"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View on GitHub →
+                </a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section id="skills">
     <h2>Technical Skills</h2>
 
     <div class="skills-grid">
-        <ul>
-            <li>AWS Cloud Infrastructure</li>
-            <li>Terraform / Infrastructure as Code</li>
-            <li>Linux Fundamentals</li>
-            <li>Networking Fundamentals</li>
-        </ul>
+        <div class="skill-group">
+            <h3>Cloud & Infrastructure</h3>
+            <ul>
+                <li>AWS cloud infrastructure</li>
+                <li>EC2, VPC, ALB & Auto Scaling</li>
+                <li>IAM & AWS Systems Manager</li>
+                <li>CloudWatch monitoring</li>
+                <li>Azure fundamentals</li>
+            </ul>
+        </div>
 
-        <ul>
-            <li>EC2, VPC, ALB & Auto Scaling</li>
-            <li>IAM & AWS Systems Manager</li>
-            <li>CloudWatch Monitoring</li>
-            <li>Git & GitHub</li>
-        </ul>
+        <div class="skill-group">
+            <h3>Automation & DevOps</h3>
+            <ul>
+                <li>Terraform / Infrastructure as Code</li>
+                <li>Git & GitHub</li>
+                <li>GitHub Actions / CI/CD</li>
+                <li>GitHub OIDC fundamentals</li>
+                <li>Bash & command-line workflows</li>
+            </ul>
+        </div>
 
-        <ul>
-            <li>GitHub Actions / CI/CD</li>
-            <li>Bash & CLI Scripting</li>
-            <li>Python</li>
-            <li>C++</li>
-        </ul>
+        <div class="skill-group">
+            <h3>Systems & Containers</h3>
+            <ul>
+                <li>Linux fundamentals</li>
+                <li>Docker & container workflows</li>
+                <li>NGINX fundamentals</li>
+                <li>Application deployment</li>
+                <li>Service health checks</li>
+            </ul>
+        </div>
 
-        <ul>
-            <li>HTML & CSS</li>
-            <li>Azure Fundamentals</li>
-            <li>PowerShell Fundamentals</li>
-            <li>Container Fundamentals</li>
-        </ul>
+        <div class="skill-group">
+            <h3>Programming & Web</h3>
+            <ul>
+                <li>Python</li>
+                <li>C++</li>
+                <li>HTML & CSS</li>
+                <li>JSON & YAML</li>
+                <li>HTTP and API troubleshooting</li>
+            </ul>
+        </div>
+
+        <div class="skill-group">
+            <h3>Operations & Troubleshooting</h3>
+            <ul>
+                <li>Log and error analysis</li>
+                <li>Incident troubleshooting</li>
+                <li>Health-check investigation</li>
+                <li>Git diffs and syntax validation</li>
+                <li>Technical documentation</li>
+            </ul>
+        </div>
+
+        <div class="skill-group">
+            <h3>Networking & Security</h3>
+            <ul>
+                <li>Networking fundamentals</li>
+                <li>Subnets, routing & gateways</li>
+                <li>Security groups and IAM concepts</li>
+                <li>PowerShell fundamentals</li>
+                <li>Cloud access-control fundamentals</li>
+            </ul>
+        </div>
     </div>
 </section>
 
-<section>
+<section id="labs">
     <h2>Cloud Fundamentals Projects & Labs</h2>
 
     <p>
-        Hands-on cloud labs completed through A Cloud Guru / Pluralsight sandbox environments,
-        covering AWS and Azure identity, networking, compute, security, containers,
-        and infrastructure automation.
+        Hands-on cloud labs completed through A Cloud Guru / Pluralsight sandbox
+        environments, covering AWS and Azure identity, networking, compute,
+        security, containers, and infrastructure automation.
     </p>
 
-    <ul>
-        <li><strong>Identity & Access Management</strong>
+    <ul class="experience-list">
+        <li>
+            <strong>Identity & Access Management</strong>
             <ul>
                 <li>Created AWS IAM users, groups, and permissions.</li>
                 <li>Created and managed Microsoft Entra ID users through the Azure portal.</li>
@@ -242,7 +511,8 @@
             </ul>
         </li>
 
-        <li><strong>Compute & Virtual Machines</strong>
+        <li>
+            <strong>Compute & Virtual Machines</strong>
             <ul>
                 <li>Launched EC2 instances within an AWS VPC.</li>
                 <li>Accessed Windows virtual machines using Azure Bastion.</li>
@@ -252,7 +522,8 @@
             </ul>
         </li>
 
-        <li><strong>Networking & Security</strong>
+        <li>
+            <strong>Networking & Security</strong>
             <ul>
                 <li>Created hub-and-spoke network topologies.</li>
                 <li>Created and managed multiple subnets.</li>
@@ -261,7 +532,8 @@
             </ul>
         </li>
 
-        <li><strong>Containers & Deployment</strong>
+        <li>
+            <strong>Containers & Deployment</strong>
             <ul>
                 <li>Created web applications from Docker containers.</li>
                 <li>Built and ran containers using Azure Container Registry.</li>
@@ -269,7 +541,8 @@
             </ul>
         </li>
 
-        <li><strong>Infrastructure as Code</strong>
+        <li>
+            <strong>Infrastructure as Code</strong>
             <ul>
                 <li>Created DynamoDB tables using AWS CloudFormation.</li>
             </ul>
@@ -277,45 +550,46 @@
     </ul>
 </section>
 
-<section>
+<section id="education">
     <h2>Certifications & Education</h2>
 
     <ul class="certifications">
         <li>
             <strong>AWS Certified Solutions Architect – Associate</strong>
         </li>
-
         <li>
             <strong>AWS Certified Cloud Practitioner</strong>
         </li>
-
         <li>
             <strong>Associate Degree in Computer Science</strong>
         </li>
     </ul>
 </section>
 
-<section>
+<section id="contact">
     <h2>Contact</h2>
 
     <p>
-        Email:
-        <a href="mailto:diaz053103@yahoo.com">
-            diaz053103@yahoo.com
-        </a>
-        <br>
+        I welcome opportunities in cloud infrastructure, IT operations, cloud support,
+        and DevOps.
+    </p>
 
-        GitHub:
-        <a href="https://github.com/diaz053103-spec"
+    <div class="contact-links">
+        <a class="project-link"
+           href="mailto:diaz053103@yahoo.com">
+            Email Me →
+        </a>
+        <a class="project-link"
+           href="https://github.com/diaz053103-spec"
            target="_blank"
            rel="noopener noreferrer">
-            github.com/diaz053103-spec
+            GitHub Profile →
         </a>
-    </p>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Emmanuel Diaz</p>
+    <p>© 2026 Emmanuel Diaz · Cloud & IT Infrastructure Portfolio</p>
 </footer>
 
 </body>
